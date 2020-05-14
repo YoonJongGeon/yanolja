@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http:/mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.yanolja.hotel.mapper.HotelMapper">
+	
+	<!-- =================================== 지역별 List =================================== --> 
+	<!-- 지역별 동적쿼리 -->		
+	<select id="getTotal" resultType="int">
+		<if test="location == 'hseoul'">select count(*) as total from hotel where h_locabasic='서울'</if>
+		<if test="location == 'hkangwon'">select count(*) as total from hotel where h_locabasic='강원'</if>
+		<if test="location == 'hbusan'">select count(*) as total from hotel where h_locabasic='부산'</if>
+		<if test="location == 'hjeju'">select count(*) as total from hotel where h_locabasic='제주'</if>
+	</select>
+	
+	<!-- 지역별 호텔리스트 동적쿼리 -->
+	<select id="getList" resultType="com.yanolja.command.HotelVO">
+		<if test="type == 'hseoul'">select h.*, (select min(h_price) from h_room r where h.h_no = r.h_no) as price from hotel h where h.h_locabasic = '서울'</if>
+		<if test="type == 'hkangwon'">select h.*, (select min(h_price) from h_room r where h.h_no = r.h_no) as price from hotel h where h.h_locabasic = '강원'</if>
+		<if test="type == 'hbusan'">select h.*, (select min(h_price) from h_room r where h.h_no = r.h_no) as price from hotel h where h.h_locabasic = '부산'</if>
+		<if test="type == 'hjeju'">select h.*, (select min(h_price) from h_room r where h.h_no = r.h_no) as price from hotel h where h.h_locabasic = '제주'</if>
+	</select>
+	
+	<resultMap type="com.yanolja.command.HotelVO" id="hinfo">
+		<result property="h_no" column="h_no" />
+		<result property="h_name" column="h_name" />
+		<result property="h_locabasic" column="h_locabasic" />
+		<result property="h_locadetail" column="h_locadetail" />
+		<collection property="roominfo" resultMap="hrinfo" />
+	</resultMap>
+	
+	<resultMap type="com.yanolja.command.H_RoomVO" id="hrinfo">
+		<result property="hr_no" column="hr_no" />
+		<result property="hr_name" column="hr_name" />
+		<result property="h_price" column="h_price" />
+		<result property="h_per" column="h_per" />
+	</resultMap>
+	
+	<select id="get_hInfo" resultMap="hinfo">
+		select h.h_no,
+		       h_name,
+		       h_locabasic,
+		       h_locadetail,
+		       hr_name,
+		       h_price,
+		       hr_no,
+		       r.h_per
+		       from hotel h 
+		   inner join h_room r on h.h_no = r.h_no 
+		   where h.h_no = #{hno} order by hr_no
+	</select>
+	
+	
+		
+	<!-- =================================== Detail 지도 표시 처리 =================================== --> 
+	<!-- Detail 주소 가져오기(GoogleMaps API 연동) -->
+	<select id="loca" resultType="String">
+		select concat(h_locaBasic, h_locaDetail) as loca from hotel where h_no = #{h_no}
+	</select>
+	
+	<!-- =================================== 예약 처리 =================================== --> 
+	<!-- 호텔 예약 처리 -->
+	<insert id="hreservation" >
+	insert into Hr_Room_book (h_no, h_name, hr_no, u_Id, hr_CheckIn, hr_CheckOut, hr_Book_Pw, hr_Book_Per, hr_Book_no) values
+		(#{h_no}, #{h_name}, #{hr_no}, #{u_Id}, #{hr_CheckIn}, #{hr_CheckOut}, #{hr_Book_Pw}, #{hr_Book_Per}, HR_ROOM_BOOK_seq.nextval)
+	</insert>
+	
+	<!-- =================================== 내 예약 현황 =================================== -->   
+	<!-- 내 예약 현황 (호텔) -->
+	<select id="hreservationView" resultType="Hr_Room_BookVO">
+		select * from HR_ROOM_BOOK where u_id=#{u_Id}
+	</select>
+	
+	<!-- 내 예약 취소 (모텔)-->	
+	<delete id="bookcancle">
+    	delete from HR_ROOM_BOOK where hr_Book_Pw = #{hr_Book_Pw} and hr_Book_no=#{hr_Book_no}   
+    </delete>
+
+	<!-- Detail 예약 모달 가격 가져오기 -->
+	<select id="getPrice" resultType="int">
+		select h_price from h_room where h_no = #{hno} and hr_no = #{hr_no}
+	</select>
+	
+	<!-- =================================== 모텔 LIST 내 검색 =================================== -->
+	<!-- 검색 결과 가져오기 -->
+	<select id="searchList" resultType="com.yanolja.command.HotelVO">
+		select h.*, (select min(h_price) from h_room r where h.h_no = r.h_no) as price from hotel h where h.h_name like '%'||#{sName}||'%'
+	</select>
+	
+</mapper>

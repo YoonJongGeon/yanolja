@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http:/mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.yanolja.guesthouse.mapper.GuesthouseMapper">
+	
+	<!-- =================================== 지역별 List =================================== --> 
+	<!-- 지역별 동적쿼리 -->		
+	<select id="getTotal" resultType="int">
+		<if test="location == 'gseoul'">select count(*) as total from guesthouse where g_locabasic='서울'</if>
+		<if test="location == 'gkangwon'">select count(*) as total from guesthouse where g_locabasic='강원'</if>
+		<if test="location == 'gbusan'">select count(*) as total from guesthouse where g_locabasic='부산'</if>
+		<if test="location == 'gjeju'">select count(*) as total from guesthouse where g_locabasic='제주'</if>
+	</select>
+	
+	<!-- 지역별 게스트하우스리스트 동적쿼리 -->
+	<select id="getList" resultType="com.yanolja.command.GuesthouseVO">
+		<if test="type == 'gseoul'">select g.*, (select min(g_price) from g_room r where g.g_no = r.g_no) as price from guesthouse g where g.g_locabasic = '서울'</if>
+		<if test="type == 'gkangwon'">select g.*, (select min(g_price) from g_room r where g.g_no = r.g_no) as price from guesthouse g where g.g_locabasic = '강원'</if>
+		<if test="type == 'gbusan'">select g.*, (select min(g_price) from g_room r where g.g_no = r.g_no) as price from guesthouse g where g.g_locabasic = '부산'</if>
+		<if test="type == 'gjeju'">select g.*, (select min(g_price) from g_room r where g.g_no = r.g_no) as price from guesthouse g where g.g_locabasic = '제주'</if>
+	</select>
+	
+	<resultMap type="com.yanolja.command.GuesthouseVO" id="ginfo">
+		<result property="g_no" column="g_no" />
+		<result property="g_name" column="g_name" />
+		<result property="g_locabasic" column="g_locabasic" />
+		<result property="g_locadetail" column="g_locadetail" />
+		<collection property="roominfo" resultMap="grinfo" />
+	</resultMap>
+	
+	<resultMap type="com.yanolja.command.G_RoomVO" id="grinfo">
+		<result property="gr_no" column="gr_no" />
+		<result property="gr_name" column="gr_name" />
+		<result property="g_price" column="g_price" />
+		<result property="g_per" column="g_per" />
+	</resultMap>
+	
+	<select id="get_gInfo" resultMap="ginfo">
+		select g.g_no,
+		       g_name,
+		       g_locabasic,
+		       g_locadetail,
+		       gr_name,
+		       g_price,
+		       gr_no,
+		       r.g_per
+		       from guesthouse g 
+		   inner join g_room r on g.g_no = r.g_no 
+		   where g.g_no = #{gno} order by gr_no
+	</select>
+		
+	<!-- =================================== Detail 지도 표시 처리 =================================== --> 
+	<!-- Detail 주소 가져오기(GoogleMaps API 연동) -->
+	<select id="loca" resultType="String">
+		select concat(g_locaBasic, g_locaDetail) as loca from guesthouse where g_no = #{g_no}
+	</select>
+	
+	<!-- =================================== 예약 처리 =================================== --> 
+	<!-- 게스트하우스 예약 처리 -->
+	<insert id="greservation" >
+	insert into Gr_Room_book (g_no, g_name, gr_no, u_Id, gr_CheckIn, gr_CheckOut, gr_Book_Pw, gr_Book_Per, gr_Book_no) values
+		(#{g_no}, #{g_name}, #{gr_no}, #{u_Id}, #{gr_CheckIn}, #{gr_CheckOut}, #{gr_Book_Pw}, #{gr_Book_Per}, GR_ROOM_BOOK_seq.nextval)
+	</insert>
+	
+	<!-- =================================== 내 예약 현황 =================================== -->   
+	<!-- 내 예약 현황 (게스트하우스) -->
+	<select id="greservationView" resultType="Gr_Room_BookVO">
+		select * from GR_ROOM_BOOK where u_id=#{u_Id}
+	</select>
+	
+	<!-- 내 예약 취소 (게스트하우스)-->	
+	<delete id="bookcancle">
+    	delete from gr_room_book where gr_Book_Pw = #{gr_Book_Pw} and gr_Book_no=#{gr_Book_no}   
+   </delete>
+   
+   <!-- 게스트하우스 Detail 예약 모달 가격 가져오기 -->
+	<select id="getPrice" resultType="int">
+		select g_price from g_room where g_no = #{gno} and gr_no = #{gr_no}
+	</select>
+	
+	<!-- =================================== 모텔 LIST 내 검색 =================================== -->
+	<!-- 검색 결과 가져오기 -->
+	<select id="searchList" resultType="com.yanolja.command.GuesthouseVO" >
+		select g.*, (select min(g_price) from g_room r where g.g_no = r.g_no) as price from guesthouse g where g.g_name like '%'||#{sName}||'%'
+	</select>
+	
+</mapper>

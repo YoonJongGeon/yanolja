@@ -1,0 +1,622 @@
+@charset "utf-8";
+
+/*you have to move it to common.css*/
+.btn_group img:hover, .btn_group li:active img {
+        background-color: #ff3478;
+        border-radius: 30px;
+        box-shadow: 0px 0px 1px 5px #ff3478
+}
+
+/*--------media query--------*/
+/*------------for pc-----------*/
+@media all and (min-width: 1176px) {
+    /*-----------pc right_contents-----------*/
+    /*----------pc slideshow---------*/
+    .slideshow_wrapper {
+        width: 100%;
+        float: left;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .slideshow {
+        position: relative;
+        width: 100%;
+        height: 445px;
+        float: left;
+    }
+
+    .slideshow li  {
+        position: absolute;
+        top: 0px;
+        left:0px;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .slideshow a {
+        color: #333;
+        display: block;
+        width:100%;
+        height: 100%;
+        cursor: pointer
+    }
+
+    .slideshow li img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .slideshow li:nth-child(1) {
+        z-index: 5
+    }
+
+    .slideshow li:nth-child(2) {
+        z-index: 4
+    }
+
+    .slideshow li:nth-child(3) {
+        z-index: 3
+    }
+
+    .slideshow li:nth-child(4) {
+        z-index: 2
+    }
+
+    .slideshow li h3 {
+        position: absolute;
+        top: 270px;
+        right: 0px;
+        height: 60px;
+        font-size: 25px;
+        line-height: 40px;
+        background-color: #fff;
+        padding: 10px 20px;
+    }
+
+    .slideshow li p {
+        position: absolute;
+        top: 330px;
+        right: 0px;
+        color: #fff;
+        background-color: #000;
+        padding: 10px 20px;
+    }
+
+    /*--------pc btn_group--------*/
+    .btn_group {
+        width: 100%;
+        float: left
+    }
+
+    .btn_group li {
+        width: 25%;
+        float: left;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /*--------pc email_wrapper---------*/
+    .email_wrapper {
+        width: 100%;
+        float: left;
+        margin-top: 30px;
+        border-bottom: 1px dashed #bababa;
+        border-top: 1px dashed #bababa;
+    }
+
+    .email_wrapper >  p {
+        width: 60%;
+        float: left;
+        font-style: italic;
+        font-size: 11px;
+        padding: 15px;
+        line-height: 1.8em;
+    }
+
+    .email_wrapper >  p > img {
+        float: right;
+        padding: 5px 15px 0 0;
+    }
+
+    .email_wrapper > form {
+        width: 40%;
+        float: right;
+        padding: 20px 10px 20px 0px;
+    }
+
+    .email_wrapper > form input:nth-of-type(1) {
+        width: 65%;
+        height: 30px;
+        margin-right: 5px;
+    }
+
+    .email_wrapper > form input:nth-of-type(2) {
+        width: 30%;
+        height: 25px;
+        border: 1px solid #bababa;
+        border-radius: 3px;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 1px 1px 0 0 rgb(244, 244, 244);
+        background-image: linear-gradient(0, #c9c9c9, #e5dfdf, #fff );
+        cursor: pointer
+    }
+
+    /*--------pc article_wrapper--------*/
+    .article_wrapper {
+        width: 100%;
+        float:left;
+        padding: 30px 0;
+    }
+
+    .article_wrapper article {
+        width: 24%;
+        float: left;
+        margin-right: 1.333%;
+    }
+
+    .article_wrapper article:nth-of-type(4) {
+        margin-right: 0%;
+    }
+
+    .article_wrapper > aticle > a {
+        width: 100%;
+    }
+
+    .article_wrapper .image_frame {
+        width: 100%;
+        border: 1px solid #bababa;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .article_wrapper .image_frame > img {
+        width: 100%;
+        padding: 5px;
+        float: left;
+    }
+
+    .article_wrapper h3 {
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    .article_wrapper .text_frame {
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.5em;
+        margin-top: 15px;
+        color: #666;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+    .article_wrapper .text_frame > a:last-child {
+        color: #34ac98;
+        line-height: 3em;
+    }
+    
+    .article_wrapper .text_frame > a:last-child:hover {
+        color: #ff3478;
+        line-height: 3em;
+    }
+}/*pc*/
+
+
+
+/*--------media query--------*/
+/*------------for tablet-----------*/
+@media all and (min-width: 768px) and (max-width: 1175px)  {
+    /*-----------tablet right_contents-----------*/
+    /*----------tablet slideshow---------*/
+    .slideshow_wrapper {
+        width: 100%;
+        float: left;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .slideshow {
+        position: relative;
+        width: 100%;
+        height: 445px;
+        float: left;
+    }
+
+    .slideshow li  {
+        position: absolute;
+        top: 0px;
+        left:0px;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .slideshow a {
+        color: #333;
+        display: block;
+        width:100%;
+        height: 100%;
+        cursor: pointer
+    }
+    
+    .slideshow li img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .slideshow li:nth-child(1) {
+        z-index: 5
+    }
+
+    .slideshow li:nth-child(2) {
+        z-index: 4
+    }
+
+    .slideshow li:nth-child(3) {
+        z-index: 3
+    }
+
+    .slideshow li:nth-child(4) {
+        z-index: 2
+    }
+
+    .slideshow li h3 {
+        position: absolute;
+        top: 270px;
+        right: 0px;
+        height: 60px;
+        font-size: 25px;
+        line-height: 40px;
+        background-color: #fff;
+        padding: 10px 20px;
+    }
+
+    .slideshow li p {
+        position: absolute;
+        top: 330px;
+        right: 0px;
+        color: #fff;
+        background-color: #000;
+        padding: 10px 20px;
+    }
+
+    /*--------tablet btn_group--------*/
+    .btn_group {
+        width: 100%;
+        float: left
+    }
+
+    .btn_group li {
+        width: 25%;
+        float: left;
+        border-right: 1px solid #ffffff;
+        padding: 20px;
+        text-align: center;
+        background-color: #ffffff;
+    }
+
+    /*--------tablet email_wrapper---------*/
+    .email_wrapper {
+        width: 100%;
+        float: left;
+        margin-top: 30px;
+        border-bottom: 1px dashed #bababa;
+        border-top: 1px dashed #bababa;
+    }
+
+    .email_wrapper >  p {
+        width: 60%;
+        float: left;
+        font-style: italic;
+        font-size: 11px;
+        padding: 15px;
+        line-height: 1.8em;
+    }
+
+    .email_wrapper >  p > img {
+        float: right;
+        padding: 5px 15px 0 0;
+    }
+
+    .email_wrapper > form {
+        width: 40%;
+        float: right;
+        padding: 20px 10px 20px 0px;
+    }
+
+    .email_wrapper > form input:nth-of-type(1) {
+        width: 65%;
+        height: 30px;
+        margin-right: 5px;
+    }
+
+    .email_wrapper > form input:nth-of-type(2) {
+        width: 30%;
+        height: 25px;
+        border: 1px solid #bababa;
+        border-radius: 3px;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 1px 1px 0 0 rgb(244, 244, 244);
+        background-image: linear-gradient(0, #c9c9c9, #e5dfdf, #fff );
+        cursor: pointer        
+    }
+
+    /*--------tablet article_wrapper--------*/
+    .article_wrapper {
+        width: 100%;
+        float:left;
+        padding: 30px 0;
+    }
+
+    .article_wrapper article {
+        width: 24%;
+        float: left;
+        margin-right: 1.333%;
+    }
+
+    .article_wrapper article:nth-of-type(4) {
+        margin-right: 0%;
+    }
+
+    .article_wrapper > aticle > a {
+        width: 100%;
+    }
+
+    .article_wrapper .image_frame {
+        width: 100%;
+        border: 1px solid #bababa;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .article_wrapper .image_frame > img {
+        width: 100%;
+        padding: 5px;
+        float: left;
+    }
+
+    .article_wrapper h3 {
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    .article_wrapper .text_frame {
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.5em;
+        margin-top: 15px;
+        color: #666;
+        font-weight: 300
+    }
+
+    .article_wrapper .text_frame > a:last-child {
+        color: #34ac98;
+        line-height: 3em;
+    }
+    
+    .article_wrapper .text_frame > a:last-child:hover {
+        color: #ff3478;
+        line-height: 3em;
+    }
+}/*tablet*/
+
+
+
+/*--------media query--------*/
+/*------------for phone-----------*/
+@media all and (max-width: 767px) {
+    /*-----------phone right_contents-----------*/
+    /*----------phone slideshow---------*/
+    .slideshow_wrapper {
+        width: 100%;
+        float: left;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .slideshow {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        float: left;
+    }
+
+    .slideshow li  {
+        position: absolute;
+        top: 0px;
+        left:0px;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .slideshow a {
+        color: #333;
+        display: block;
+        width:100%;
+        height: 100%;
+        cursor: pointer
+    }
+
+    .slideshow li img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .slideshow li:nth-child(1) {
+        z-index: 5
+    }
+
+    .slideshow li:nth-child(2) {
+        z-index: 4
+    }
+
+    .slideshow li:nth-child(3) {
+        z-index: 3
+    }
+
+    .slideshow li:nth-child(4) {
+        z-index: 2
+    }
+
+    .slideshow li h3 {
+        position: absolute;
+        width: 100%;
+        bottom: 24px;
+        right: 0px;
+        height: 30px;
+        font-size: 13px;
+        line-height: 12px;
+        background-color: #fff;
+        padding: 10px 20px;
+    }
+
+    .slideshow li p {
+        width: 100%;
+        height: 24px;
+        line-height: 20px;
+        position: absolute;
+        font-size: 8px;
+        bottom: 0px;
+        right: 0px;
+        color: #fff;
+        background-color: #000;
+        padding: 2px 2px 2px 20px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    /*--------phone btn_group--------*/
+    .btn_group {
+        width: 100%;
+        float: left;
+    }
+
+    .btn_group li {
+        width: 25%;
+        float: left;
+        border-right: 1px solid #ffffff;
+        padding: 20px;
+        padding-left: 13px;
+        text-align: center;
+        background-color: #ffffff;
+    }
+    
+     .btn_group li a img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /*--------phone email_wrapper---------*/
+    .email_wrapper {
+        width: 100%;
+        float: left;
+        margin-top: 20px;
+        border-bottom: 1px dashed #bababa;
+        border-top: 1px dashed #bababa;
+    }
+
+    .email_wrapper >  p {
+        width: 100%;
+        float: left;
+        font-style: italic;
+        font-size: 11px;
+        padding: 15px;
+        line-height: 1.8em;
+    }
+
+    .email_wrapper >  p > img {
+        float: right;
+        padding: 5px 15px 0 0;
+    }
+
+    .email_wrapper > form {
+        width: 100%;
+        float: right;
+        padding: 20px 10px 20px 0px;
+    }
+
+    .email_wrapper > form input:nth-of-type(1) {
+        width: 65%;
+        height: 30px;
+        margin-right: 5px;
+    }
+
+    .email_wrapper > form input:nth-of-type(2) {
+        width: 30%;
+        height: 25px;
+        border: 1px solid #bababa;
+        border-radius: 3px;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 1px 1px 0 0 rgb(244, 244, 244);
+        background-image: linear-gradient(0, #c9c9c9, #e5dfdf, #fff );
+        cursor: pointer        
+    }
+
+    /*--------phone article_wrapper--------*/
+    .article_wrapper {
+        width: 100%;
+        float:left;
+        padding: 30px 0;
+    }
+
+    .article_wrapper article {
+        width: 100%;
+        float: left;
+        margin-bottom: 20px;
+    }
+    
+    .article_wrapper article:last-child {
+        margin-bottom: 0px;
+    }
+
+    .article_wrapper > aticle > a {
+        width: 100%;
+    }
+
+    .article_wrapper .image_frame {
+        width: 100%;
+        border: 1px solid #bababa;
+        float: left;
+        margin-bottom: 10px;
+    }
+
+    .article_wrapper .image_frame > img {
+        width: 100%;
+        padding: 5px;
+        float: left;
+    }
+
+    .article_wrapper h3 {
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    .article_wrapper .text_frame {
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.5em;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        color: #666;
+        font-weight: 300
+    }
+
+    .article_wrapper .text_frame > a:last-child {
+        color: #34ac98;
+        font-weight: 400
+    }
+    
+    .article_wrapper .text_frame > a:last-child:hover {
+        color: #ff3478;
+    }
+    
+    /*remove it, if you want.*/
+    article {
+    border-bottom: 1px dashed #bababa;
+    }
+}/*phone*/

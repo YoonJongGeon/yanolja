@@ -1,0 +1,13 @@
+-- 후기 댓글 테이블
+CREATE TABLE REPLY (
+    R_NO NUMBER(10,0), -- 댓글 번호
+    M_NO NUMBER(10,0), -- 모텔 번호
+    H_NO NUMBER(10,0), -- 호텔 번호
+    P_NO NUMBER(10,0), -- 펜션 번호
+    G_NO NUMBER(10,0), -- 게스트하우스 번호
+    REPLY VARCHAR2(200) not null, -- 댓글 내용
+    REPLYID VARCHAR2(50) not null, -- 댓글 작성자 ID
+    REPLYDATE DATE DEFAULT SYSDATE not null, -- 댓글 작성 시간
+    RATING NUMBER(10,0) not null -- 평점
+);
+CREATE SEQUENCE REPLY_SEQ; -- 후기 댓글 테이블 SEQUENCE 설정

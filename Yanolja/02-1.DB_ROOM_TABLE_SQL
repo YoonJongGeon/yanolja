@@ -1,0 +1,36 @@
+-- 모텔 방 테이블
+CREATE TABLE M_ROOM (
+    M_NO NUMBER(10,0) not null, -- 모텔 번호
+    MR_NAME VARCHAR2(50) not null, -- 모텔 방 이름
+    M_PER VARCHAR2(50) not null, -- 모텔 방 최대 인원 수
+    M_PRICE NUMBER(10,0) not null, -- 모텔 방 가격
+    MR_NO NUMBER(10,0) not null -- 모텔 방 번호
+);
+CREATE SEQUENCE M_ROOM_SEQ; -- 모텔 방 테이블 SEQUENCE 설정
+-- 호텔 방 테이블
+CREATE TABLE H_ROOM (
+    H_NO NUMBER(10,0) not null, -- 호텔 번호
+    HR_NAME VARCHAR2(50) not null, -- 호텔 방 이름
+    H_PER VARCHAR2(50) not null, -- 호텔 방 최대 인원 수
+    H_PRICE NUMBER(10,0) not null, -- 호텔 방 가격
+    HR_NO NUMBER(10,0) not null -- 호텔 방 번호
+);
+CREATE SEQUENCE H_ROOM_SEQ; -- 호텔 방 테이블 SEQUENCE 설정
+-- 게스트하우스 방 테이블
+CREATE TABLE G_ROOM (
+    G_NO NUMBER(10,0) not null, -- 게스트하우스 번호
+    GR_NAME VARCHAR2(50) not null, -- 게스트하우스 방 이름
+    G_PER VARCHAR2(50) not null, -- 게스트하우스 방 최대 인원 수
+    G_PRICE NUMBER(10,0) not null, -- 게스트하우스 방 가격
+    GR_NO NUMBER(10,0) not null -- 게스트하우스 방 번호
+);
+CREATE SEQUENCE G_ROOM_SEQ; -- 게스트하우스 방 테이블 SEQUENCE 설정
+-- 펜션 방 테이블
+CREATE TABLE P_ROOM (
+    P_NO NUMBER(10,0) not null, -- 펜션 번호
+	PR_NAME VARCHAR2(50) not null, -- 펜션 방 이름
+    P_PER VARCHAR2(50) not null, -- 펜션 방 최대 인원 수
+    P_PRICE NUMBER(10,0) not null, -- 펜션 방 가격
+	PR_NO NUMBER(10,0) not null -- 펜션 방 번호
+);
+CREATE SEQUENCE P_ROOM_SEQ; -- 펜션 방 테이블 SEQUENCE 설정

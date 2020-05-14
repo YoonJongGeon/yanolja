@@ -1,0 +1,52 @@
+-- 모텔 방 예약 테이블
+CREATE TABLE MR_ROOM_BOOK (
+    M_NO NUMBER(10,0) not null, -- 모텔 번호
+    M_NAME VARCHAR2(50) not null, -- 모텔 이름
+    MR_NO NUMBER(10,0) not null, -- 모텔 방 번호
+    U_ID VARCHAR2(50) not null, -- 예약자 ID
+    MR_BOOK_PW VARCHAR2(50) not null, -- 예약 비밀번호
+    MR_CHECKIN VARCHAR2(50) not null, -- 입실 날짜
+    MR_CHECKOUT VARCHAR2(50) not null, -- 퇴실 날짜
+    MR_BOOK_PER VARCHAR2(50) not null, -- 예약 인원수
+    MR_BOOK_NO NUMBER(10,0) not null -- 예약 번호
+);
+CREATE SEQUENCE MR_ROOM_BOOK_SEQ; -- 모텔 방 예약 테이블 SEQUENCE 설정
+-- 호텔 방 예약 테이블
+CREATE TABLE HR_ROOM_BOOK (
+    H_NO NUMBER(10,0) not null, -- 호텔 번호
+    H_NAME VARCHAR2(50) not null, -- 호텔 이름
+    HR_NO NUMBER(10,0) not null, -- 호텔 방 번호
+    U_ID VARCHAR2(50) not null, -- 예약자 ID
+    HR_BOOK_PW VARCHAR2(50) not null, -- 예약 비밀번호
+    HR_CHECKIN VARCHAR2(50) not null, -- 입실 날짜
+    HR_CHECKOUT VARCHAR2(50) not null, -- 퇴실 날짜
+    HR_BOOK_PER VARCHAR2(50) not null, -- 예약 인원수
+    HR_BOOK_NO NUMBER(10,0) not null -- 예약 번호
+);
+CREATE SEQUENCE HR_ROOM_BOOK_SEQ; -- 호텔 방 예약 테이블 SEQUENCE 설정
+-- 게스트하우스 방 예약 테이블
+CREATE TABLE GR_ROOM_BOOK (
+    G_NO NUMBER(10,0) not null, -- 게스트하우스 번호
+    G_NAME VARCHAR2(50) not null, -- 게스트하우스 이름
+    GR_NO NUMBER(10,0) not null, -- 게스트하우스 방 번호
+    U_ID VARCHAR2(50) not null, -- 예약자 ID
+    GR_BOOK_PW VARCHAR2(50) not null, -- 예약 비밀번호
+    GR_CHECKIN VARCHAR2(50) not null, -- 입실 날짜
+    GR_CHECKOUT VARCHAR2(50) not null, -- 퇴실 날짜
+    GR_BOOK_PER VARCHAR2(50) not null, -- 예약 인원수
+    GR_BOOK_NO NUMBER(10,0) not null -- 예약 번호
+);
+CREATE SEQUENCE GR_ROOM_BOOK_SEQ; -- 게스트하우스 방 예약 테이블 SEQUENCE 설정
+-- 펜션 방 예약 테이블
+CREATE TABLE PR_ROOM_BOOK (
+    P_NO NUMBER(10,0) not null, -- 펜션 번호
+    P_NAME VARCHAR2(50) not null, -- 펜션 이름
+    PR_NO NUMBER(10,0) not null, -- 펜션 방 번호
+    U_ID VARCHAR2(50) not null, -- 예약자 ID
+    PR_BOOK_PW VARCHAR2(50) not null, -- 예약 비밀번호
+    PR_CHECKIN VARCHAR2(50) not null, -- 입실 날짜
+    PR_CHECKOUT VARCHAR2(50) not null, -- 퇴실 날짜
+    PR_BOOK_PER VARCHAR2(50) not null, -- 예약 인원수
+    PR_BOOK_NO NUMBER(10,0) not null -- 예약 번호
+);
+CREATE SEQUENCE PR_ROOM_BOOK_SEQ; -- 펜션 방 예약 테이블 SEQUENCE 설정

@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.hide  {
+    position: absolute;
+    top: -999em;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #333; 
+}
+
+a:hover {
+    color: #ff3478;
+}
+
+.ir_pm {
+    text-indent: -99em;
+    white-space: nowrap;
+    overflow: hidden;
+}

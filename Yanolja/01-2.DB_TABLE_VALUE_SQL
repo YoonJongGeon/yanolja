@@ -1,0 +1,85 @@
+------------------------------------------------ 모텔 LIST ------------------------------------------------
+-- 서울 모텔 LIST
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (1, '역삼 Hotel the Artist 모텔', '서울', '강남구 테헤란로29길 11 (역삼동)');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (2, '천호 라뷰 럭셔리 모텔', '서울', '강동구 올림픽로72길 11 (천호동)');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (3, '신촌 M 모텔', '서울', '마포구 백범로4길 14 (노고산동)');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (4, '동대문 부티크나인 모텔', '서울', '동대문구 왕산로 28 (신설동)');
+-- 부산 모텔 LIST
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (5, '부산 해운대 더베이 모텔', '부산', '해운대구 구남로18번길 36 (우동)');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (6, '부산 영도 글랜스 모텔', '부산', '영도구 봉래나루로 56 (봉래동1가)');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (7, '부산 서면 짝 모텔', '부산', '부산진구 부전로 28 (부전동)');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (8, '부산역 아리아 모텔', '부산', '동구 중앙대로209번길 22 (초량동)');
+-- 강원 모텔 LIST
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (9, '춘천 더베네치아 스위트 모텔', '강원', '춘천시 효자로 136 (효자동)');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (10, '춘천 후평 YAJA 모텔', '강원', '춘천시 보안길 107-1 (후평동)');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (11, '원주 명품베스트 무인 모텔', '강원', '원주시 호저면 감박산길 42-17');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (12, '원주 카카오 모텔', '강원', '원주시 감영길 53-1 (중앙동)');
+-- 제주 모텔 LIST
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (13, '서귀포 DK 모텔', '제주', '서귀포시 중앙로54번길 12');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (14, '제주 레몬트리 모텔', '제주', '제주시 애월읍 가문동길 4');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (15, '제주 밀레니엄 무인텔', '제주', '제주시 애월읍 부룡수길 13');
+insert into motel (m_no, m_name, m_locabasic, m_locadetail) values (16, '제주 애플 모텔', '제주', '제주시 동광로 45 애플관광호텔 (이도1동)');
+
+------------------------------------------------ 호텔 LIST ------------------------------------------------
+-- 서울 호텔 LIST
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (1, '글래드 라이브 강남 호텔', '서울', '강남구 봉은사로 223', '4성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (2, '잠실 호텔 롯데', '서울', '송파구 올림픽로 240', '5성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (3, '신라스테이 구로 호텔', '서울', '동작구 시흥대로 596', '3성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (4, '이비스 스타일 앰배서더 서울 용산 호텔', '서울', '용산구 청파로20길 95', '4성급');
+-- 부산 호텔 LIST
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (5, '해운대 씨클라우드 호텔', '부산', '해운대구 해운대해변로 287', '레지던스');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (6, '해운대 소사이어티 호텔', '부산', '해운대구 구남로12번길 37', '2성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (7, '부산 웨스틴 조선 호텔', '부산', '해운대구 동백로 67', '5성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (8, '라마다 앙코르 바이 윈덤 부산 해운대 로텔', '부산', '해운대구 구남로 9', '4성급');
+-- 강원 호텔 LIST
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (9, '강릉 씨베이 호텔', '강원', '강릉시 주문진읍 주문로 59', '4성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (10, '강릉 탑스텐 호텔', '강원', '강릉시 옥계면 헌화로 455-34', '5성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (11, '강릉 세인트존스 호텔', '강원', '강릉시 창해로 307', '5성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (12, '더 클래스 300 호텔', '강원', '속초시 동해대로 3915', '4성급');
+-- 제주 호텔 LIST
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (13, '더 아트스테이 제주 함덕4 호텔', '제주', '제주시 조천읍 조함해안로 504', '4성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (14, '더 큐브 리조트 제주 호텔', '제주', '서귀포시 솔오름로105번길 24', '3성급');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (15, '라마다 바이 윈덤 제주 더 함덕 호텔', '제주', '제주시 조천읍 신북로 470', '비즈니스');
+insert into hotel (h_no, h_name, h_locabasic, h_locadetail, h_grade) values (16, '메종 글래드 제주5 호텔', '제주', '제주시 노연로 80', '5성급');
+
+------------------------------------------------ 펜션 LIST ------------------------------------------------
+-- 서울 펜션 LIST
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (1, '한미장', '서울', '강북구 삼양로 181길 168(한미장)');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (2, '서울북한산럭셔리카라반 글램핑', '서울', '은평구 북한산로 232-1');
+-- 부산 펜션 LIST
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (3, '바다풍경 펜션', '부산', '해운대구 구남로 35-13');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (4, '마린케이풀빌라 펜션', '부산', '해운대구 송정광어골로 3');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (5, '송정미연 펜션', '부산', '해운대구 송정광어골로 58-1');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (6, '그레이샌즈 풀빌라 펜션', '부산', '해운대구 송정해변로 30-1');
+-- 강원 펜션 LIST
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (7, '고성 하버빌 펜션', '강원', '고성군 토성면 아야진해변길35');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (8, '고성 라헨느풀빌라 펜션', '강원', '고성군 죽왕면 가진해변길 229');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (9, '양양 트윈비치 펜션', '강원', '양양군 손양면 선사유적로 268');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (10, '속초 더티(The T) 펜션', '강원', '속초시 해오름로 151');
+-- 제주 펜션 LIST
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (11, '벙커 펜션', '제주', '제주시 조천읍 함덕6길 36');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (12, '서귀포 블루마운틴 풀빌라 스파 펜션', '제주', '서귀포시 성산읍 중산간동로 4255');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (13, '제주 루마인 펜션', '제주', '제주시 구좌읍 해맞이해안로 2498');
+INSERT INTO PENSION (p_no, p_name, p_locabasic, p_locadetail) values (14, '제주 클레르드륀 펜션', '제주', '제주시 애월읍 고내로11길 14');
+
+------------------------------------------------ 게스트하우스 LIST ------------------------------------------------
+-- 서울 게스트하우스 LIST
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (1, '서울 아띠 게스트하우스', '서울', '중구 서애로 22-1 (필동3가)');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (2, '24게스트하우스 잠실점', '서울', '송파구 백제고분로 22길 5');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (3, '이태원 서울큐브 게스트하우스', '서울', '용산구 우사단로14길 8');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (4, '영등포 다다름 게스트하우스', '서울', '영등포구 신길로37길 13-2 (신길동)');
+-- 부산 게스트하우스 LIST
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (5, '부산 세리인 게스트하우스', '부산', '부산진구 서면문화로 25-1 (부전동)');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (6, '광안리 제이스테이 게스트하우스', '부산', '수영구 남천바다로 31-1 (광안동)');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (7, '부산 시나몬트리 게스트하우스', '부산', '중구 용미길9번길 6 (남포동1가)');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (8, '해운대 자다 앤 가다 게스트하우스', '부산', '해운대구 중동1로 45');
+-- 강원 게스트하우스 LIST
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (9, '춘천 청춘봄봄 게스트하우스', '강원', '춘천시 남춘로 33-1');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (10, '쉬어가는 춘천역 게스트하우스', '강원', '춘천시 소양고개길 12-1 (소양로2가)');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (11, '춘천 파티앤스테이 게스트하우스', '강원', '춘천시 아침길 16-1 (조양동)');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (12, '속초 위드유 게스트하우스', '강원', '속초시 동해대로 3993 (조양동)');
+-- 제주 게스트하우스 LIST
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (13, 'BP 게스트하우스', '제주', '제주시 신대로17길 29 (연동)');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (14, '미소 게스트하우스', '제주', '제주시 관덕로 41 (일도1동)');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (15, '예하 게스트하우스', '제주', '제주시 삼오길 9');
+INSERT INTO GUESTHOUSE (g_no, g_name, g_locabasic, g_locadetail) values (16, '월정리썬시티 파티 게스트하우스', '제주', '제주시 구좌읍 월정5길 33');

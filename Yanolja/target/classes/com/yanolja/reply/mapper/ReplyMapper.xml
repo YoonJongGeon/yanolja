@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http:/mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper  namespace = "com.yanolja.reply.mapper.ReplyMapper">
+ 	
+ 	<!-- ============================== 댓글 후기 등록 ============================== -->
+ 	<!-- 모텔 댓글 후기 등록 -->
+ 	<insert id="motel_input_reply">
+  		insert into reply(r_no,m_no,reply,replyId,rating) values(reply_seq.nextval,#{m_no},#{reply},#{replyId},#{rating})
+  	</insert>
+  	<!-- 호텔 댓글 후기 등록 -->
+ 	<insert id="hotel_input_reply">
+  		insert into reply(r_no,h_no,reply,replyId,rating) values(reply_seq.nextval,#{h_no},#{reply},#{replyId},#{rating})
+  	</insert>
+  	<!-- 게스트하우스 댓글 후기 등록 -->
+ 	<insert id="guesthouse_input_reply">
+  		insert into reply(r_no,g_no,reply,replyId,rating) values(reply_seq.nextval,#{g_no},#{reply},#{replyId},#{rating})
+  	</insert>
+  	<!-- 펜션 댓글 후기 등록 -->
+ 	<insert id="pension_input_reply">
+  		insert into reply(r_no,p_no,reply,replyId,rating) values(reply_seq.nextval,#{p_no},#{reply},#{replyId},#{rating})
+  	</insert>
+  	
+  	<!-- ============================== 댓글 후기 List ============================== -->
+  	<!-- 모텔 후기 List -->
+  	<select id="motel_replyList" resultType="com.yanolja.command.ReplyVO">
+		select * from reply where m_no = #{m_no} order by r_no desc  	
+  	</select>
+  	<!-- 호텔 후기 List -->
+  	<select id="hotel_replyList" resultType="com.yanolja.command.ReplyVO">
+		select * from reply where h_no = #{h_no} order by r_no desc  	
+  	</select>
+  	<!-- 게스트하우스 후기 List -->
+  	<select id="guesthouse_replyList" resultType="com.yanolja.command.ReplyVO">
+		select * from reply where g_no = #{g_no} order by r_no desc  	
+  	</select>
+  	<!-- 펜션 후기 List -->
+  	<select id="pension_replyList" resultType="com.yanolja.command.ReplyVO">
+		select * from reply where p_no = #{p_no} order by r_no desc  	
+  	</select>
+ 	
+ 	<!-- 댓글 후기 비밀번호 확인 -->
+ 	<select id="pwCheck" resultType="int">
+	 	select  count(*) as replyCount
+	    from reply r
+	    left join userss u on r.replyid = u.u_id
+	    where r.r_no =  #{r_no} and u.u_pw =  #{replyPw}
+  	</select>
+  	
+  	<!-- 댓글 후기 삭제 -->
+  	<delete id="delete">
+  		delete from reply where r_no = #{r_no}
+  	</delete>
+ 
+ </mapper>

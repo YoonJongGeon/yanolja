@@ -1,0 +1,257 @@
+------------------------------------------------ 모텔 방 LIST ------------------------------------------------
+-- 서울 모텔01 방 LIST
+INSERT INTO M_ROOM values (1, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (1, '디럭스', '2', 30000, 2);
+INSERT INTO M_ROOM values (1, '프리미엄', '4', 50000, 3);
+-- 서울 모텔02 방 LIST
+INSERT INTO M_ROOM values (2, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (2, '디럭스', '2', 30000, 2);
+INSERT INTO M_ROOM values (2, '스위트', '4', 50000, 3);
+-- 서울 모텔03 방 LIST
+INSERT INTO M_ROOM values (3, '일반실', '2', 20000, 1);
+INSERT INTO M_ROOM values (3, '트윈', '2', 30000, 2);
+INSERT INTO M_ROOM values (3, '특실', '4', 50000, 3);
+-- 서울 모텔04 방 LIST
+INSERT INTO M_ROOM values (4, '퍼니', '2', 20000, 1);
+INSERT INTO M_ROOM values (4, '오리엔탈', '2', 30000, 2);
+INSERT INTO M_ROOM values (4, '스파', '4', 50000, 3);
+--------------------------------------------------------
+-- 부산 모텔01 방 LIST
+INSERT INTO M_ROOM values (5, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (5, '디럭스', '2', 30000, 2);
+INSERT INTO M_ROOM values (5, 'VIP', '4', 50000, 3);
+-- 부산 모텔02 방 LIST
+INSERT INTO M_ROOM values (6, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (6, '디럭스', '2', 30000, 2);
+INSERT INTO M_ROOM values (6, '패밀리', '4', 50000, 3);
+-- 부산 모텔03 방 LIST
+INSERT INTO M_ROOM values (7, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (7, '프리미엄', '2', 30000, 2);
+INSERT INTO M_ROOM values (7, 'VIP', '4', 50000, 3);
+-- 부산 모텔04 방 LIST
+INSERT INTO M_ROOM values (8, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (8, '디럭스', '2', 30000, 2);
+INSERT INTO M_ROOM values (8, 'VIP', '4', 50000, 3);
+--------------------------------------------------------
+-- 강원 모텔01 방 LIST
+INSERT INTO M_ROOM values (9, '더블', '2', 20000, 1);
+INSERT INTO M_ROOM values (9, '트윈', '2', 30000, 2);
+INSERT INTO M_ROOM values (9, '온돌', '4', 50000, 3);
+-- 강원 모텔02 방 LIST
+INSERT INTO M_ROOM values (10, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (10, '스페셜', '2', 30000, 2);
+INSERT INTO M_ROOM values (10, '프리미엄', '4', 50000, 3);
+-- 강원 모텔03 방 LIST
+INSERT INTO M_ROOM values (11, '더블', '2', 20000, 1);
+INSERT INTO M_ROOM values (11, '트윈', '2', 30000, 2);
+INSERT INTO M_ROOM values (11, '명품', '4', 50000, 3);
+-- 강원 모텔04 방 LIST
+INSERT INTO M_ROOM values (12, '일반실', '2', 20000, 1);
+INSERT INTO M_ROOM values (12, '금연실', '2', 30000, 2);
+INSERT INTO M_ROOM values (12, '특실', '4', 50000, 3);
+--------------------------------------------------------
+-- 제주 모텔01 방 LIST
+INSERT INTO M_ROOM values (13, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (13, '더블', '2', 30000, 2);
+INSERT INTO M_ROOM values (13, '스위트', '4', 50000, 3);
+-- 제주 모텔02 방 LIST
+INSERT INTO M_ROOM values (14, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (14, '더블', '2', 30000, 2);
+INSERT INTO M_ROOM values (14, '스위트', '4', 50000, 3);
+-- 제주 모텔03 방 LIST
+INSERT INTO M_ROOM values (15, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (15, '더블', '2', 30000, 2);
+INSERT INTO M_ROOM values (15, '스위트', '4', 50000, 3);
+-- 제주 모텔04 방 LIST
+INSERT INTO M_ROOM values (16, '스탠다드', '2', 20000, 1);
+INSERT INTO M_ROOM values (16, '더블', '2', 30000, 2);
+INSERT INTO M_ROOM values (16, '스위트', '4', 50000, 3);
+
+------------------------------------------------ 호텔 방 LIST ------------------------------------------------
+-- 서울 호텔01 방 LIST
+INSERT INTO H_ROOM values (1, '스탠다드', '2', 20000, 1);
+INSERT INTO H_ROOM values (1, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (1, '스위트', '4', 50000, 3);
+-- 서울 호텔02 방 LIST
+INSERT INTO H_ROOM values (2, '트윈', '2', 20000, 1);
+INSERT INTO H_ROOM values (2, '더블', '2', 30000, 2);
+-- 서울 호텔03 방 LIST
+INSERT INTO H_ROOM values (3, '스탠다드', '2', 20000, 1);
+INSERT INTO H_ROOM values (3, '트윈', '2', 30000, 2);
+INSERT INTO H_ROOM values (3, '패밀리', '4', 50000, 3);
+-- 서울 호텔04 방 LIST
+INSERT INTO H_ROOM values (4, '더블', '2', 20000, 1);
+INSERT INTO H_ROOM values (4, '트윈', '2', 30000, 2);
+INSERT INTO H_ROOM values (4, '스위트', '4', 50000, 3);
+
+-- 부산 호텔01 방 LIST
+INSERT INTO H_ROOM values (5, '디럭스', '2', 20000, 1);
+INSERT INTO H_ROOM values (5, '트리플', '2', 30000, 2);
+INSERT INTO H_ROOM values (5, '스위트', '4', 50000, 3);
+-- 부산 호텔02 방 LIST
+INSERT INTO H_ROOM values (6, '싱글', '2', 20000, 1);
+INSERT INTO H_ROOM values (6, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (6, '펜트하우스', '4', 50000, 3);
+-- 부산 호텔03 방 LIST
+INSERT INTO H_ROOM values (7, '트윈', '2', 20000, 1);
+INSERT INTO H_ROOM values (7, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (7, '스위트', '4', 50000, 3);
+-- 부산 호텔08 방 LIST
+INSERT INTO H_ROOM values (8, '더블', '2', 20000, 1);
+INSERT INTO H_ROOM values (8, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (8, '스위트', '4', 50000, 3);
+
+-- 강원 호텔01 방 LIST
+INSERT INTO H_ROOM values (9, '더블', '2', 20000, 1);
+INSERT INTO H_ROOM values (9, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (9, '패밀리', '4', 50000, 3);
+-- 강원 호텔02 방 LIST
+INSERT INTO H_ROOM values (10, '더블', '2', 20000, 1);
+INSERT INTO H_ROOM values (10, '퀸', '2', 30000, 2);
+INSERT INTO H_ROOM values (10, '스위트', '4', 50000, 3);
+-- 강원 호텔03 방 LIST
+INSERT INTO H_ROOM values (11, '더블', '2', 20000, 1);
+INSERT INTO H_ROOM values (11, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (11, '트윈', '4', 50000, 3);
+-- 강원 호텔04 방 LIST
+INSERT INTO H_ROOM values (12, '스탠다드', '2', 20000, 1);
+INSERT INTO H_ROOM values (12, '트윈', '2', 30000, 2);
+INSERT INTO H_ROOM values (12, '스위트', '4', 50000, 3);
+
+-- 제주 호텔01 방 LIST
+INSERT INTO H_ROOM values (13, '스탠다드', '2', 20000, 1);
+INSERT INTO H_ROOM values (13, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (13, '스위트', '4', 50000, 3);
+-- 제주 호텔02 방 LIST
+INSERT INTO H_ROOM values (14, '스탠다드', '2', 20000, 1);
+INSERT INTO H_ROOM values (14, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (14, '스위트', '4', 50000, 3);
+-- 제주 호텔03 방 LIST
+INSERT INTO H_ROOM values (15, '스탠다드', '2', 20000, 1);
+INSERT INTO H_ROOM values (15, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (15, '스위트', '4', 50000, 3);
+-- 제주 호텔04 방 LIST
+INSERT INTO H_ROOM values (16, '스탠다드', '2', 20000, 1);
+INSERT INTO H_ROOM values (16, '디럭스', '2', 30000, 2);
+INSERT INTO H_ROOM values (16, '스위트', '4', 50000, 3);
+
+------------------------------------------------ 펜션 방 LIST ------------------------------------------------
+-- 서울 펜션01 방 LIST
+INSERT INTO P_ROOM values (1, '별실별장(30인)', 30, 200000, 1);
+INSERT INTO P_ROOM values (1, '특빌별장(20인)', 20, 150000, 2);
+INSERT INTO P_ROOM values (1, '한옥(12인)', 12, 100000, 3);
+-- 서울 펜션02 방 LIST
+INSERT INTO P_ROOM values (2, '온돌난방 글램핑', 4, 50000, 1);
+INSERT INTO P_ROOM values (2, '특대형 카라반', 8, 120000, 2);
+INSERT INTO P_ROOM values (2, '트리플 글램핑', 6, 100000, 3);
+-- 부산 펜션01 방 LIST
+INSERT INTO P_ROOM values (3, '소형 온돌방', 2, 40000, 1);
+INSERT INTO P_ROOM values (3, '10평 온돌방', 4, 50000, 2);
+INSERT INTO P_ROOM values (3, '20평 온돌방', 8, 100000, 3);
+-- 부산 펜션02 방 LIST
+INSERT INTO P_ROOM values (4, '디럭스', 2, 40000, 1);
+INSERT INTO P_ROOM values (4, '복층 풀빌라', 4, 50000, 2);
+INSERT INTO P_ROOM values (4, '노천 버블스파', 4, 60000, 3);
+-- 부산 펜션03 방 LIST
+INSERT INTO P_ROOM values (5, '알베로', 4, 70000, 1);
+INSERT INTO P_ROOM values (5, '메모리아', 6, 100000, 2);
+INSERT INTO P_ROOM values (5, '센티멘탈', 8, 120000, 3);
+-- 부산 펜션04 방 LIST
+INSERT INTO P_ROOM values (6, '디럭스', 2, 30000, 1);
+INSERT INTO P_ROOM values (6, '스위트', 4, 50000, 2);
+INSERT INTO P_ROOM values (6, '파티룸', 8, 100000, 3);
+
+-- 강원 펜션01 방 LIST
+INSERT INTO P_ROOM values (7, '디럭스', 2, 30000, 1);
+INSERT INTO P_ROOM values (7, '럭셔리', 4, 50000, 2);
+INSERT INTO P_ROOM values (7, '슈퍼리어', 4, 80000, 3);
+-- 강원 펜션02 방 LIST
+INSERT INTO P_ROOM values (8, '스파빌라1', 4, 70000, 1);
+INSERT INTO P_ROOM values (8, '스파빌라2', 4, 70000, 2);
+INSERT INTO P_ROOM values (8, '풀빌라', 4, 100000, 3);
+-- 강원 펜션03 방 LIST
+INSERT INTO P_ROOM values (9, '101호', 2, 40000, 1);
+INSERT INTO P_ROOM values (9, '102호', 4, 50000, 2);
+INSERT INTO P_ROOM values (9, '201호', 6, 80000, 3);
+-- 강원 펜션04 방 LIST
+INSERT INTO P_ROOM values (10, '101호', 2, 20000, 1);
+INSERT INTO P_ROOM values (10, '102호', 4, 40000, 2);
+INSERT INTO P_ROOM values (10, '103호', 4, 50000, 3);
+
+-- 제주 펜션01 방 LIST
+INSERT INTO P_ROOM values (11, '101호', 4, 50000, 1);
+-- 강원 펜션02 방 LIST
+INSERT INTO P_ROOM values (12, '101호', 4, 70000, 1);
+INSERT INTO P_ROOM values (12, '201호', 4, 70000, 2);
+-- 강원 펜션03 방 LIST
+INSERT INTO P_ROOM values (13, '101호', 6, 80000, 1);
+INSERT INTO P_ROOM values (13, '102호', 6, 80000, 2);
+-- 강원 펜션04 방 LIST
+INSERT INTO P_ROOM values (14, '101호', 4, 60000, 1);
+INSERT INTO P_ROOM values (14, '201호', 4, 60000, 2);
+
+------------------------------------------------ 게스트하우스 방 LIST ------------------------------------------------
+-- 서울 게스트하우스01 방 LIST
+INSERT INTO G_ROOM values (1, '싱글', '1', 20000, 1);
+INSERT INTO G_ROOM values (1, '트윈', '2', 30000, 2);
+INSERT INTO G_ROOM values (1, '4인도미트리', '4', 50000, 3);
+-- 서울 게스트하우스02 방 LIST
+INSERT INTO G_ROOM values (2, '더블', '2', 20000, 1);
+INSERT INTO G_ROOM values (2, '트리플', '4', 40000, 2);
+INSERT INTO G_ROOM values (2, '6인패밀리', '6', 60000, 3);
+-- 서울 게스트하우스03 방 LIST
+INSERT INTO G_ROOM values (3, '여성도미트리', '4', 20000, 1);
+INSERT INTO G_ROOM values (3, '더블', '2', 30000, 2);
+INSERT INTO G_ROOM values (3, '남성도미트리', '4', 20000, 3);
+-- 서울 게스트하우스04 방 LIST
+INSERT INTO G_ROOM values (4, '더블', '2', 30000, 1);
+INSERT INTO G_ROOM values (4, '트리플', '4', 40000, 2);
+INSERT INTO G_ROOM values (4, '단체룸', '10', 100000, 3);
+
+-- 부산 게스트하우스01 방 LIST
+INSERT INTO G_ROOM values (5, '도미트리', '6', 20000, 1);
+INSERT INTO G_ROOM values (5, '트리플', '4', 40000, 2);
+INSERT INTO G_ROOM values (5, '패밀리', '4', 50000, 3);
+-- 부산 게스트하우스02 방 LIST
+INSERT INTO G_ROOM values (6, '도미트리', '6', 20000, 1);
+INSERT INTO G_ROOM values (6, '더블', '2', 30000, 2);
+INSERT INTO G_ROOM values (6, '패밀리', '4', 50000, 3);
+-- 부산 게스트하우스03 방 LIST
+INSERT INTO G_ROOM values (7, '더블', '2', 20000, 1);
+INSERT INTO G_ROOM values (7, '트윈', '2', 30000, 2);
+INSERT INTO G_ROOM values (7, '패밀리', '4', 50000, 3);
+-- 부산 게스트하우스04 방 LIST
+INSERT INTO G_ROOM values (8, '6인실', '6', 20000, 1);
+INSERT INTO G_ROOM values (8, '더블', '2', 30000, 2);
+INSERT INTO G_ROOM values (8, '4인실', '4', 50000, 3);
+
+-- 강원 게스트하우스01 방 LIST
+INSERT INTO G_ROOM values (9, '2인실', '2', 30000, 1);
+INSERT INTO G_ROOM values (9, '4인도미트리', '4', 20000, 2);
+INSERT INTO G_ROOM values (9, '6인도미트리', '6', 20000, 3);
+-- 강원 게스트하우스02 방 LIST
+INSERT INTO G_ROOM values (10, '트윈', '6', 30000, 1);
+INSERT INTO G_ROOM values (10, '4인여성도미트리', '4', 20000, 2);
+INSERT INTO G_ROOM values (10, '4인남성도미트리', '4', 20000, 3);
+-- 강원 게스트하우스03 방 LIST
+INSERT INTO G_ROOM values (11, '2인여성도미트리', '2', 20000, 1);
+INSERT INTO G_ROOM values (11, '2인남성도미트리', '2', 20000, 2);
+INSERT INTO G_ROOM values (11, '4인도미트리', '4', 20000, 3);
+-- 강원 게스트하우스04 방 LIST
+INSERT INTO G_ROOM values (12, '여성도미트리', '2', 20000, 1);
+INSERT INTO G_ROOM values (12, '더블', '2', 30000, 2);
+INSERT INTO G_ROOM values (12, '트윈', '2', 30000, 3);
+
+-- 제주 게스트하우스01 방 LIST
+INSERT INTO G_ROOM values (13, '도미트리', '4', 20000, 1);
+INSERT INTO G_ROOM values (13, '트리플', '4', 30000, 2);
+INSERT INTO G_ROOM values (13, '패밀리', '3', 50000, 3);
+-- 제주 게스트하우스02 방 LIST
+INSERT INTO G_ROOM values (14, '101호', '4', 20000, 1);
+INSERT INTO G_ROOM values (14, '102호', '4', 20000, 2);
+-- 제주 게스트하우스03 방 LIST
+INSERT INTO G_ROOM values (15, '101호', '4', 20000, 1);
+INSERT INTO G_ROOM values (15, '102호', '4', 20000, 2);
+-- 제주 게스트하우스04 방 LIST
+INSERT INTO G_ROOM values (16, '101호', '4', 20000, 1);
+INSERT INTO G_ROOM values (16, '102호', '4', 20000, 2);

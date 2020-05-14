@@ -1,0 +1,204 @@
+th, form td:first-child {
+    color: #666;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.m-control .m-title {
+    min-width: 100px;
+    vertical-align: middle;
+}
+
+.m-control .form-control {
+    width: 200px;
+    display: inline;
+}
+
+.m-control input-sm {
+    height: auto;
+    line-height: normal;
+}
+
+.m-control .sel {
+    width: 120px;
+}
+
+.m-control .add {
+    width: 400px;
+}
+
+.titlefoot {
+    text-align: center;
+    margin: 30px auto;
+    width: 50%;
+}
+
+.tabs-style {
+    background-color: #ff3579;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.tabs-style>li {
+    margin-bottom: 0;
+}
+
+.tabs-style li a {
+    background-color: #ff3579;
+    border: none;
+    margin: 0;
+    border-radius: 0px;
+}
+
+.tabs-style li.active a,
+.tabs-style li.active a:hover,
+.tabs-style li.active li.active {
+    border: none;
+    background-color: #ff3579;
+    color: white;
+
+}
+
+.nav>li>a {
+    color: white;
+}
+
+.myInfo {
+    margin: 0 auto;
+    float: none;
+}
+
+.myInfo-inner {
+    margin: 0;
+    float: none;
+}
+
+.nav-tabs>li>a:hover {
+    color: #ff3579;
+}
+
+#selboxDirect {
+    border-radius: 3px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+#updateBtn {
+    text-align: right;
+}
+
+.tab-content p:first-child {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+
+
+/*--------media query--------*/
+/*------------for pc-----------*/
+@media all and (min-width: 1176px) {
+    .container {
+        width: 100%;
+    }
+    
+    .right_contents table {
+        width: 100%;
+        text-align: left;
+    }
+
+    .right_contents thead > tr {
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 2px solid #d8d8d8
+    }
+
+    .right_contents tbody > tr {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 2px solid #d8d8d8
+    }
+    
+    
+}
+
+/*--------media query--------*/
+/*------------for tablet-----------*/
+@media all and (min-width: 768px) and (max-width: 1175px) {
+    .container {
+        width: 100%;
+    }
+    
+    .right_contents table {
+        width: 100%;
+        text-align: left;
+    }
+
+    .right_contents thead > tr {
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 2px solid #d8d8d8
+    }
+
+    .right_contents tbody > tr {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 2px solid #d8d8d8
+    }
+    
+    .m-control .form-control {
+        width: 200px;
+        display: inline;
+    }
+    
+    
+}
+
+/*--------media query--------*/
+/*------------for phone-----------*/
+@media all and (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
+    
+    .right_contents table {
+        width: 100%;
+        text-align: left;
+    }
+
+    .right_contents thead > tr {
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 2px solid #d8d8d8
+    }
+
+    .right_contents tbody > tr {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 2px solid #d8d8d8
+    }
+    
+    .m-control .form-control {
+        width: 150px;
+        display: inline;
+    }
+    
+    .right_contents th, form td:first-child {
+        font-size: 12px;
+    }
+    
+    .right_contents tr:nth-child(5) select.input-sm,
+    .right_contents tr:nth-child(6) input.input-sm {
+        margin-top: 10px
+    }
+    
+    .nav-tabs {
+        margin-bottom: 20px
+    }
+    
+    
+    
+}
+
+

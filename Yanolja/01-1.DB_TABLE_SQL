@@ -1,0 +1,51 @@
+-- 모텔 테이블
+CREATE TABLE MOTEL (
+    M_NO NUMBER(10,0) not null, -- 모텔 번호 (Primary Key)
+    M_NAME VARCHAR2(50) not null, -- 모텔 이름
+    M_CONTENT VARCHAR2(100), -- 모텔 설명
+    M_LOCABASIC VARCHAR2(1000) not null, -- 모텔 기본 주소
+    M_LOCADETAIL VARCHAR2(1000) not null, -- 모텔 상세 주소
+    M_PHONE VARCHAR2(50), -- 모텔 연락처
+    M_GRADE VARCHAR2(50) -- 모텔 등급
+);
+ALTER TABLE MOTEL ADD CONSTRAINT MOTEL_NO_PK PRIMARY KEY (M_NO); -- 모텔 테이블 M_NO Primary Key 설정
+CREATE SEQUENCE MOTEL_SEQ; -- 모텔 테이블 SEQUENCE 설정
+
+-- 호텔 테이블
+CREATE TABLE HOTEL (
+    H_NO NUMBER(10,0) not null, -- 호텔 번호 (Primary Key)
+    H_NAME VARCHAR2(50) not null, -- 호텔 이름
+    H_CONTENT VARCHAR2(100), -- 호텔 설명
+    H_LOCABASIC VARCHAR2(1000) not null, -- 호텔 기본 주소
+    H_LOCADETAIL VARCHAR2(1000) not null, -- 호텔 상세 주소
+    H_PHONE VARCHAR2(50), -- 호텔 연락처
+    H_GRADE VARCHAR2(50) -- 호텔 등급
+);
+ALTER TABLE HOTEL ADD CONSTRAINT HOTEL_NO_PK PRIMARY KEY (H_NO); -- 호텔 테이블 H_NO Primary Key 설정
+CREATE SEQUENCE HOTEL_SEQ; -- 모텔 테이블 SEQUENCE 설정
+
+-- 게스트하우스 테이블
+CREATE TABLE GUESTHOUSE (
+    G_NO NUMBER(10,0) not null, -- 게스트하우스 번호 (Primary Key)
+    G_NAME VARCHAR2(50) not null, -- 게스트하우스 이름
+    G_CONTENT VARCHAR2(100), -- 게스트하우스 설명
+    G_LOCABASIC VARCHAR2(1000) not null, -- 게스트하우스 기본 주소
+    G_LOCADETAIL VARCHAR2(1000) not null, -- 게스트하우스 상세 주소
+    G_PHONE VARCHAR2(50), -- 게스트하우스 연락처
+    G_GRADE VARCHAR2(50) -- 게스트하우스 등급
+);
+ALTER TABLE GUESTHOUSE ADD CONSTRAINT GUESTHOUSE_NO_PK PRIMARY KEY (G_NO); -- 게스트하우스 테이블 G_NO Primary Key 설정
+CREATE SEQUENCE GUESTHOUSE_SEQ; -- 모텔 테이블 SEQUENCE 설정
+
+-- 펜션 테이블
+CREATE TABLE PENSION (
+    P_NO NUMBER(10,0) not null, -- 펜션 번호 (Primary Key)
+    P_NAME VARCHAR2(50) not null, -- 펜션 이름
+    P_CONTENT VARCHAR2(100), -- 펜션 설명
+    P_LOCABASIC VARCHAR2(1000) not null, -- 펜션 기본 주소
+    P_LOCADETAIL VARCHAR2(1000) not null, -- 펜션 상세 주소
+    P_PHONE VARCHAR2(50), -- 펜션 연락처
+    P_GRADE VARCHAR2(50) -- 펜션 등급
+);
+ALTER TABLE PENSION ADD CONSTRAINT PENSION_NO_PK PRIMARY KEY (P_NO); -- 펜션 테이블 P_NO Primary Key 설정
+CREATE SEQUENCE PENSION_SEQ; -- 펜션 테이블 SEQUENCE 설정

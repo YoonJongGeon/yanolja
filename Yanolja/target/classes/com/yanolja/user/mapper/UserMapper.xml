@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http:/mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.yanolja.user.mapper.UserMapper">
+	
+	<!-- =================================== 회원 정보 관련 =================================== --> 
+	<!-- 회원가입 -->
+	<insert id="join">
+		insert into userss (u_Id,u_Email1,u_Email2,u_Pw,u_Name,u_Phone1,u_Phone2) values(#{u_Id},#{u_Email1},#{u_Email2},#{u_Pw},#{u_Name},#{u_Phone1},#{u_Phone2})
+	</insert>
+	
+	<!-- 아이디 체크 -->
+	<select id="idConfirm" resultType="int">
+		select count(*) as result from userss where u_Id = #{u_Id}
+	</select>
+
+	<!-- 로그인 -->
+	<select id="login" resultType="int">
+		select count(*) as result from userss where u_Id = #{u_Id} and u_Pw = #{u_Pw}
+	</select>
+
+	<!-- 개인 회원정보 가져오기 -->
+	<select id="getInfo" resultType="UserVO">
+		select * from userss where u_Id = #{u_Id}
+	</select>
+
+	<!-- 회원정보 수정 -->
+	<update id="update">
+		update userss set u_Email1=#{u_Email1},u_Email2=#{u_Email2},u_Pw=#{u_Pw},u_Phone1=#{u_Phone1},u_Phone2=#{u_Phone2} where u_Id=#{u_Id}
+	</update>
+	
+	<!-- ID 찾기 -->
+	<select id="idFind" resultType="com.yanolja.command.UserVO">
+		select * from userss where u_name = #{u_Name} and u_phone1 = #{u_Phone1} and u_phone2 = #{u_Phone2}
+	</select>
+
+	<!-- 비밀번호 찾기 -->
+	<select id="pwFind" resultType="com.yanolja.command.UserVO">
+		select * from userss where u_Id = #{u_Id} and u_Email1 = #{u_Email1} and u_Email2 = #{u_Email2}
+	</select>
+
+	<!-- 비밀번호 변경 -->
+	<update id="pwUpdate">
+		update userss set u_Pw=#{u_Pw} where u_Id =#{u_Id}
+	</update>
+	
+	<!-- Home 검색 -->
+	<select id="total" resultType="int">
+		<if test="searchType == 'Motel'">select count(*) from  motel  where m_name like  '%'||#{searchName}||'%' or m_locabasic like '%'||#{searchName}||'%'</if>
+		<if test="searchType == 'Hotel'">select count(*) from  hotel  where h_name like  '%'||#{searchName}||'%' or h_locabasic like '%'||#{searchName}||'%'</if>
+		<if test="searchType == 'Pension'">select count(*) from  pension  where p_name like  '%'||#{searchName}||'%' or p_locabasic like '%'||#{searchName}||'%'</if>
+		<if test="searchType == 'GuestHouse'">select count(*) from  guesthouse  where g_name like  '%'||#{searchName}||'%' or g_locabasic like '%'||#{searchName}||'%'</if>
+	</select>
+	
+	<select id="m_search" resultType="com.yanolja.command.MotelVO">
+		select REPLACE(m_name,' ','')as m_name, m_no, m_content, m_locabasic, m_locadetail,m_phone,m_grade, 
+		(select min(m_price) from m_room r where m.m_no = r.m_no) as price 
+		from motel m where m_name like  '%'||#{searchName}||'%' or m_locabasic like '%'||#{searchName}||'%'
+	</select>
+	
+	<select id="h_search" resultType="com.yanolja.command.HotelVO">
+		select REPLACE(h_name,' ','')as h_name, h_no, h_content, h_locabasic, h_locadetail,h_phone,h_grade, 
+		(select min(h_price) from h_room r where h.h_no = r.h_no) as price 
+		from hotel h where h_name like  '%'||#{searchName}||'%' or h_locabasic like '%'||#{searchName}||'%'
+	</select>
+	
+	<select id="p_search" resultType="com.yanolja.command.PensionVO">
+		select REPLACE(p_name,' ','')as p_name, p_no, p_content, p_locabasic, p_locadetail,p_phone,p_grade, 
+		(select min(p_price) from p_room r where p.p_no = r.p_no) as price 
+		from pension p where p_name like  '%'||#{searchName}||'%' or p_locabasic like '%'||#{searchName}||'%'
+	</select>
+	
+	<select id="g_search" resultType="com.yanolja.command.GuesthouseVO">
+		select REPLACE(g_name,' ','')as g_name, g_no, g_content, g_locabasic, g_locadetail,g_phone,g_grade, 
+		(select min(g_price) from g_room r where g.g_no = r.g_no) as price 
+		from guesthouse g where g_name like  '%'||#{searchName}||'%' or g_locabasic like '%'||#{searchName}||'%'
+	</select>
+
+</mapper>

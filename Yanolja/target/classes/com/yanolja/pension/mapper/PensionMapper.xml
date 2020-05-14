@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http:/mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.yanolja.pension.mapper.PensionMapper">
+	
+	<!-- =================================== 지역별 List =================================== --> 
+	<!-- 지역별 동적쿼리 -->		
+	<select id="getTotal" resultType="int">
+		<if test="location == 'pseoul'">select count(*) as total from pension where p_locabasic='서울'</if>
+		<if test="location == 'pkangwon'">select count(*) as total from pension where p_locabasic='강원'</if>
+		<if test="location == 'pbusan'">select count(*) as total from pension where p_locabasic='부산'</if>
+		<if test="location == 'pjeju'">select count(*) as total from pension where p_locabasic='제주'</if>
+	</select>
+	
+	<!-- 지역별 펜션리스트 동적쿼리 -->
+	<select id="getList" resultType="com.yanolja.command.PensionVO">
+		<if test="type == 'pseoul'">select p.*, (select min(p_price) from p_room r where p.p_no = r.p_no) as price from pension p where p.p_locabasic = '서울'</if>
+		<if test="type == 'pkangwon'">select p.*, (select min(p_price) from p_room r where p.p_no = r.p_no) as price from pension p where p.p_locabasic = '강원'</if>
+		<if test="type == 'pbusan'">select p.*, (select min(p_price) from p_room r where p.p_no = r.p_no) as price from pension p where p.p_locabasic = '부산'</if>
+		<if test="type == 'pjeju'">select p.*, (select min(p_price) from p_room r where p.p_no = r.p_no) as price from pension p where p.p_locabasic = '제주'</if>
+	</select>
+	
+	<resultMap type="com.yanolja.command.PensionVO" id="pinfo">
+		<result property="p_no" column="p_no" />
+		<result property="p_name" column="p_name" />
+		<result property="p_locabasic" column="p_locabasic" />
+		<result property="p_locadetail" column="p_locadetail" />
+		<collection property="roominfo" resultMap="prinfo" />
+	</resultMap>
+	
+	<resultMap type="com.yanolja.command.P_RoomVO" id="prinfo">
+		<result property="pr_no" column="pr_no" />
+		<result property="pr_name" column="pr_name" />
+		<result property="p_price" column="p_price" />
+		<result property="p_per" column="p_per" />
+	</resultMap>
+	
+	<select id="get_pInfo" resultMap="pinfo">
+		select p.p_no,
+		       p_name,
+		       p_locabasic,
+		       p_locadetail,
+		       pr_name,
+		       p_price,
+		       pr_no,
+		       r.p_per
+		       from pension p 
+		   inner join p_room r on p.p_no = r.p_no 
+		   where p.p_no = #{pno} order by pr_no
+	</select>
+		
+	<!-- =================================== Detail 지도 표시 처리 =================================== --> 
+	<!-- Detail 주소 가져오기(GoogleMaps API 연동) -->
+	<select id="loca" resultType="String">
+		select concat(p_locaBasic, p_locaDetail) as loca from pension where p_no = #{p_no}
+	</select>
+	
+	<!-- =================================== 예약 처리 =================================== --> 
+	<!-- 펜션 예약 처리 -->
+	<insert id="preservation" >
+	insert into Pr_Room_book (p_no, p_name, pr_no, u_Id, pr_CheckIn, pr_CheckOut, pr_Book_Pw, pr_Book_Per, pr_Book_no) values
+		(#{p_no}, #{p_name}, #{pr_no}, #{u_Id}, #{pr_CheckIn}, #{pr_CheckOut}, #{pr_Book_Pw}, #{pr_Book_Per}, PR_ROOM_BOOK_seq.nextval)
+	</insert>
+	
+	<!-- =================================== 내 예약 현황 =================================== -->   
+	<!-- 내 예약 현황 (펜션) -->
+	<select id="preservationView" resultType="Pr_Room_BookVO">
+		select * from PR_ROOM_BOOK where u_id=#{u_Id}
+	</select>
+	
+	<!-- 내 예약 취소 (펜션)-->	
+	<delete id="bookcancle">
+    	delete from pr_room_book where pr_Book_Pw = #{pr_Book_Pw} and pr_Book_no=#{pr_Book_no}   
+   </delete>
+   
+   <!-- 펜션 Detail 예약 모달 가격 가져오기 -->
+	<select id="getPrice" resultType="int">
+		select p_price from p_room where p_no = #{pno} and pr_no = #{pr_no}
+	</select>
+	
+	<!-- =================================== 모텔 LIST 내 검색 =================================== -->
+	<!-- 검색 결과 가져오기 -->
+	<select id="searchList" resultType="com.yanolja.command.PensionVO" >
+		select p.*, (select min(p_price) from p_room r where p.p_no = r.p_no) as price from pension p where p.p_name like '%'||#{sName}||'%'
+	</select>
+	
+</mapper>

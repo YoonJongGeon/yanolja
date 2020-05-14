@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- doctype의 configuration은 마이바티스의 설정파일을 의미함. -->
+<!-- mapper파일들에서 공통으로 사용되는 코드를 기술할 수 있습니다. -->
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.yanolja.command.UserVO" alias="UserVO"/>
+		<typeAlias type="com.yanolja.command.ReplyVO" alias="ReplyVO"/>
+		
+		<!-- <typeAlias type="com.yanolja.command.MotelVO" alias="MotelVO"/>
+		<typeAlias type="com.yanolja.command.HotelVO" alias="HotelVO"/>
+		<typeAlias type="com.yanolja.command.GuesthouseVO" alias="GuesthouseVO"/>
+		<typeAlias type="com.yanolja.command.PensionVO" alias="PensionVO"/>
+		
+		<typeAlias type="com.yanolja.command.M_RoomVO" alias="M_RoomVO"/>
+		<typeAlias type="com.yanolja.command.H_RoomVO" alias="H_RoomVO"/>
+		<typeAlias type="com.yanolja.command.G_RoomVO" alias="G_RoomVO"/>
+		<typeAlias type="com.yanolja.command.P_RoomVO" alias="P_RoomVO"/> -->
+		
+		<typeAlias type="com.yanolja.command.Mr_Room_BookVO" alias="Mr_Room_BookVO"/>
+		<typeAlias type="com.yanolja.command.Hr_Room_BookVO" alias="Hr_Room_BookVO"/>
+		<typeAlias type="com.yanolja.command.Gr_Room_BookVO" alias="Gr_Room_BookVO"/>
+		<typeAlias type="com.yanolja.command.Pr_Room_BookVO" alias="Pr_Room_BookVO"/>
+	</typeAliases>
+</configuration>

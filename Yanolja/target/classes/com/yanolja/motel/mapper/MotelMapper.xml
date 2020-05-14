@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http:/mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.yanolja.motel.mapper.MotelMapper">
+	
+	<!-- =================================== 지역별 List =================================== --> 
+	<!-- 지역별 동적쿼리 -->		
+	<select id="getTotal" resultType="int">
+		<if test="location == 'mseoul'">select count(*) as total from motel where m_locabasic='서울'</if>
+		<if test="location == 'mkangwon'">select count(*) as total from motel where m_locabasic='강원'</if>
+		<if test="location == 'mbusan'">select count(*) as total from motel where m_locabasic='부산'</if>
+		<if test="location == 'mjeju'">select count(*) as total from motel where m_locabasic='제주'</if>
+	</select>
+	
+	<!-- 지역별 모텔리스트 동적쿼리 -->
+	<select id="getList" resultType="com.yanolja.command.MotelVO">
+		<if test="type == 'mseoul'">select m.*, (select min(m_price) from m_room r where m.m_no = r.m_no) as price from motel m where m.m_locabasic = '서울'</if>
+		<if test="type == 'mkangwon'">select m.*, (select min(m_price) from m_room r where m.m_no = r.m_no) as price from motel m where m.m_locabasic = '강원'</if>
+		<if test="type == 'mbusan'">select m.*, (select min(m_price) from m_room r where m.m_no = r.m_no) as price from motel m where m.m_locabasic = '부산'</if>
+		<if test="type == 'mjeju'">select m.*, (select min(m_price) from m_room r where m.m_no = r.m_no) as price from motel m where m.m_locabasic = '제주'</if>
+	</select>
+	
+	<resultMap type="com.yanolja.command.MotelVO" id="minfo">
+		<result property="m_no" column="m_no" />
+		<result property="m_name" column="m_name" />
+		<result property="m_locabasic" column="m_locabasic" />
+		<result property="m_locadetail" column="m_locadetail" />
+		<collection property="roominfo" resultMap="mrinfo" />
+	</resultMap>
+	
+	<resultMap type="com.yanolja.command.M_RoomVO" id="mrinfo">
+		<result property="mr_no" column="mr_no" />
+		<result property="mr_name" column="mr_name" />
+		<result property="m_price" column="m_price" />
+		<result property="m_per" column="m_per" />
+	</resultMap>
+	
+	<select id="get_mInfo" resultMap="minfo">
+		select m.m_no,
+		       m_name,
+		       m_locabasic,
+		       m_locadetail,
+		       mr_name,
+		       m_price,
+		       mr_no,
+		       r.m_per
+		       from motel m 
+		   inner join m_room r on m.m_no = r.m_no 
+		   where m.m_no = #{mno} order by mr_no
+	</select>
+	
+	
+		
+	<!-- =================================== Detail 지도 표시 처리 =================================== --> 
+	<!-- Detail 주소 가져오기(GoogleMaps API 연동) -->
+	<select id="loca" resultType="String">
+		select concat(m_locaBasic, m_locaDetail) as loca from motel where m_no = #{m_no}
+	</select>
+	
+	<!-- =================================== 예약 처리 =================================== --> 
+	<!-- 모텔 예약 처리 -->
+	<insert id="mreservation" >
+	insert into Mr_Room_book (m_no, m_name, mr_no, u_Id, mr_CheckIn, mr_CheckOut, mr_Book_Pw, mr_Book_Per, mr_Book_no) values
+		(#{m_no}, #{m_name}, #{mr_no}, #{u_Id}, #{mr_CheckIn}, #{mr_CheckOut}, #{mr_Book_Pw}, #{mr_Book_Per}, MR_ROOM_BOOK_seq.nextval)
+	</insert>
+	
+	<!-- =================================== 내 예약 현황 =================================== -->   
+	<!-- 내 예약 현황 (모텔) -->
+	<select id="mreservationView" resultType="Mr_Room_BookVO">
+		select * from MR_ROOM_BOOK where u_id=#{u_Id}
+	</select>
+	
+	<!-- 내 예약 취소 (모텔)-->	
+	<delete id="bookcancle">
+    	delete from mr_room_book where mr_Book_Pw = #{mr_Book_Pw} and mr_Book_no=#{mr_Book_no}   
+   </delete>
+   
+	<!-- Detail 예약 모달 가격 가져오기 -->
+	<select id="getPrice" resultType="int">
+		select m_price from m_room where m_no = #{mno} and mr_no = #{mr_no}
+	</select>
+	
+	<!-- =================================== 모텔 LIST 내 검색 =================================== -->
+	<!-- 검색 결과 가져오기 -->
+	<select id="searchList" resultType="com.yanolja.command.MotelVO" >
+		select m.*, (select min(m_price) from m_room r where m.m_no = r.m_no) as price from motel m where  m.m_name like '%'||#{sName}||'%'
+	</select>
+	
+</mapper>
